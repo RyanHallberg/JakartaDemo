@@ -39,7 +39,6 @@ public class ReportEndpoint
 		{
 			Class.forName("net.ucanaccess.jdbc.UcanaccessDriver"); // loads the driver
 			
-			//String path = "C:\\Users\\Ryan\\Documents\\productdb.accdb";
 			String url = "jdbc:ucanaccess://" + entity.getDataSource().getPath(); // gets the connection instance
 			
 			con = DriverManager.getConnection(url + entity.getDataSource().getUserName() + entity.getDataSource().getPassword());

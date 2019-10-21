@@ -47,7 +47,6 @@ public class ReportEndpoint
 		{
 			System.out.println("Error: " + e);
 		}
-		String content = "";
 		try
 		{
 			Statement st = con.createStatement();
@@ -71,7 +70,6 @@ public class ReportEndpoint
 				reportColumns.add(reportColumn);
 			}
 
-			int j = 0;
 			List<String> values;
 			while (rs.next())
 			{
@@ -86,7 +84,7 @@ public class ReportEndpoint
 		}
 		catch (Exception e)
 		{
-			content = ("Error Occurred: " + e);
+			e.printStackTrace();
 		}
 		
 		return Response.ok(reportTemplate).build();

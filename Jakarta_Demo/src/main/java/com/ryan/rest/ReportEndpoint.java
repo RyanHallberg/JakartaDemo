@@ -35,7 +35,6 @@ public class ReportEndpoint
 		ReportTemplate reportTemplate = new ReportTemplate();
 		List<ReportColumn> reportColumns = new ArrayList<>();
 		ReportColumn reportColumn;
-		String value;
 		try
 		{
 			Class.forName("net.ucanaccess.jdbc.UcanaccessDriver"); // loads the driver
@@ -81,20 +80,8 @@ public class ReportEndpoint
 				for (int i = 1; i<= numColumns; i++)
 				{
 					reportColumns.get(i-1).add(rs.getString(i));
-					//reportColumns.get(i).getValues().add(rs.getString(i)); maybe something like this
-					//values.add(rs.getString(i));
+
 				}
-				//reportColumns.get(j).setValues(values);
-				
-				//j++;
-//				content += (rsmd.getColumnName(1) +"\t\t"
-//							+ rsmd.getColumnName(2) + "\t\t\n");
-//				content += (rs.getString(1)) + " ";
-//				content += (rs.getString(2) + " ");
-//				content += (rs.getString(3) + " ");
-//				content += (rs.getString(4) + " ");
-//				content += (rs.getString(5) + " ");
-//				content += (rs.getString(6) + "\n\n");
 			}
 			reportTemplate.setColumns(reportColumns);
 		}
